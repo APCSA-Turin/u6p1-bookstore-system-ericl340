@@ -2,29 +2,62 @@ package com.example.project;
 
 public class Book{
     //requires 5 attributes String title, String author, int yearPublished, String isbn, int quantity
+    private String title;
+    private String author;
+    private int yearPublished;
+    private String isbn;
+    private int quantity;
 
     //requires 1 constructor with 5 arguments that intitialize the attribtues of the class.
+    public Book(String t, String a, int y, String i, int q) {
+        title = t;
+        author = a;
+        yearPublished = y;
+        isbn = i;
+        quantity = q;
+    }
+    public String getTitle() {
+        return title;
+    }
 
-    // public  getTitle() {}
+    public void setTitle(String t) {
+        title = t;
+    }
 
-    // public setTitle() {}
+    public String getAuthor() {
+        return author;
+    }
 
-    // public getAuthor() {}
+    public void setAuthor(String a) {
+        author = a;
+    }
 
-    // public setAuthor() {}
+    public int getYearPublished() {
+        return yearPublished;
+    }
 
-    // public getYearPublished() {}
+    public void setYearPublished(int y) {
+        yearPublished = y;
+    }
 
-    // public setYearPublished() {}
+    public String getIsbn() {
+        return isbn;
+    }
 
-    // public getIsbn() {}
+    public void setIsbn(String i) {
+        isbn = i;
+    }
 
-    // public void setIsbn() {}
+    public int getQuantity() {
+        return quantity;
+    }
 
-    // public int getQuantity() {}
+    public void setQuantity(int q) {
+        quantity = q;
+    }
 
-    // public void setQuantity() {}
-
-    // public  bookInfo(){} //returns "Title: [], Author: [], Year: [], ISBN: [], Quantity: []"
+    public String bookInfo(){
+        return "Title: " + title + ", Author: " + author + ", Year: " + yearPublished + ", ISBN: " + isbn + ", Quantity: " + quantity;
+    } //returns "Title: [], Author: [], Year: [], ISBN: [], Quantity: []"
        
 }
