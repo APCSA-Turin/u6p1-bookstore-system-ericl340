@@ -40,15 +40,15 @@ public class BookStore{
     }
 
     public void consolidateUsers(){
-        User[] nUsers = new User[users.length];
+        User[] n = users;
+        users = new User[n.length];
         int i = 0;
-        for (User u: users) {
+        for (User u: n) {
             if (u != null) {
-                nUsers[i] = u;
+                users[i] = u;
                 i++;
             }
         }
-        users = nUsers;
     }
     public void consolidateBooks(){
         int l = 0;
