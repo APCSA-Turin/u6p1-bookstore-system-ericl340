@@ -92,9 +92,12 @@ public class BookStore{
 
     public void removeBook(Book book){
         String isbn = book.getIsbn();
+        String t = book.getTitle();
+        String a = book.getAuthor();
+        int y = book.getYearPublished();
         int q;
         for (int i = 0; i < books.length; i++) {
-            if (books[i].getIsbn().equals(isbn)) {
+            if (books[i].getIsbn().equals(isbn) && books[i].getTitle().equals(t) && books[i].getAuthor().equals(a) && books[i].getYearPublished() == y) {
                 q = books[i].getQuantity();
                 if (q > 1) {
                     books[i].setQuantity(q - 1);
@@ -117,8 +120,10 @@ public class BookStore{
 
     public String bookStoreUserInfo(){
         String res = "Users:\n";
-        for (int i = 0; i < users.length; i++) {
-            res += users[i].userInfo() + "\n";
+        for (User u : users) {
+            if (u != null) {
+                res += u.userInfo() + "\n";
+            }
         }
         return res;
     } //you are not tested on this method but use it for debugging purposes
