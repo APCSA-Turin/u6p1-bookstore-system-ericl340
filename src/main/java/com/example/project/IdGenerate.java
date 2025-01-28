@@ -7,7 +7,7 @@ public class IdGenerate{ //This class contains statics variable and methods, you
     // //requires one empty constructor
     private IdGenerate() {}
 
-    public static String getCurrentId(){
+    public static String getCurrentId(){//getter
         return currentId;
     }
 

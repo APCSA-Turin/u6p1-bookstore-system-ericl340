@@ -16,43 +16,43 @@ public class Book{
         isbn = i;
         quantity = q;
     }
-    public String getTitle() {
+    public String getTitle() {//getter
         return title;
     }
 
-    public void setTitle(String t) {
+    public void setTitle(String t) {//setter
         title = t;
     }
 
-    public String getAuthor() {
+    public String getAuthor() {//getter
         return author;
     }
 
-    public void setAuthor(String a) {
+    public void setAuthor(String a) {//setter
         author = a;
     }
 
-    public int getYearPublished() {
+    public int getYearPublished() {//getter
         return yearPublished;
     }
 
-    public void setYearPublished(int y) {
+    public void setYearPublished(int y) {//setter
         yearPublished = y;
     }
 
-    public String getIsbn() {
+    public String getIsbn() {//getter
         return isbn;
     }
 
-    public void setIsbn(String i) {
+    public void setIsbn(String i) {//setter
         isbn = i;
     }
 
-    public int getQuantity() {
+    public int getQuantity() {//getter
         return quantity;
     }
 
-    public void setQuantity(int q) {
+    public void setQuantity(int q) {//setter
         quantity = q;
     }
 

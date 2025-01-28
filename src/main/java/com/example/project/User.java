@@ -10,27 +10,27 @@ public class User{
         name = n;
         Id = id;
     }
-    public String getName() {
+    public String getName() {//getter
         return name;
     }
 
-    public void setName(String n) {
+    public void setName(String n) {//setter
         name = n;
     }
 
-    public String getId() {
+    public String getId() {//getter
         return Id;
     }
 
-    public void setId(String id) {
+    public void setId(String id) {//setter
         Id = id;
     }
 
-    public Book[] getBooks() {
+    public Book[] getBooks() {//getter
         return books;
     }
 
-    public void setBooks(Book[] b) {
+    public void setBooks(Book[] b) {//setter
         books = b;
     }
 

@@ -6,7 +6,7 @@ public class cli{
     public void run() {
         s: while (true) {
             System.out.println("Press 0 to exit application\nPress 1 to add new book\nPress 2 to increase quantity of a book\nPress 3 to search for a book\nPress 4 to show all books\nPress 5 to register student\nPress 6 to show all registered students\nPress 7 to check out book\nPress 8 to check in book");
-            switch (sc.nextInt()) {
+            switch (sc.nextInt()) {//loop for the cli options
                 case 0:
                     break s;
                 case 1:
@@ -41,7 +41,7 @@ public class cli{
             }
         }
     }
-    public void addBook() {
+    public void addBook() {//gets info from user and adds book
         System.out.print("Enter book title: ");
         sc.nextLine();
         String t = sc.nextLine();
@@ -62,7 +62,7 @@ public class cli{
         int i = 0;
         for (Book b : books) {
             if (b != null) {
-                System.out.println(i + ". " + b.bookInfo());
+                System.out.println(i + ". " + b.bookInfo());//gets a string of books
                 i++;
             }
         }
@@ -74,7 +74,7 @@ public class cli{
         for (Book b : books) {
             if (b != null) {
                 if (i == sel) {
-                    b.setQuantity(q + b.getQuantity());
+                    b.setQuantity(q + b.getQuantity());//adds to selected book's quantity
                     break;
                 }
                 i++;
@@ -87,7 +87,7 @@ public class cli{
         String t = sc.nextLine();
         for (Book b : bks.getBooks()) {
             if (b.getTitle().indexOf(t) != -1) {
-                System.out.println(b.bookInfo());
+                System.out.println(b.bookInfo());//prints all the books that contain the search term
             }
         }
     }
@@ -98,7 +98,7 @@ public class cli{
             String n = sc.nextLine();
             User u = new User(n, IdGenerate.getCurrentId());
             IdGenerate.generateID();
-            bks.addUser(u);
+            bks.addUser(u);//adds student with generated id an specified name
         }else{
             System.out.println("Reached user limit");
             cont();
@@ -115,7 +115,7 @@ public class cli{
         }
         System.out.print("Enter user number: ");
         uc = 0;
-        int selU = sc.nextInt();
+        int selU = sc.nextInt();//selects user to check out to
         User user = new User(null, null);
         for (User u : users) {
             if (u != null) {
@@ -145,7 +145,7 @@ public class cli{
         }
         System.out.print("Enter book number: ");
         i = 0;
-        int sel = sc.nextInt();
+        int sel = sc.nextInt();//selects book to checkout
         Book selBook = new Book(null, null, 0, null, 0);
         for (Book b : books) {
             if (b != null) {
@@ -157,7 +157,7 @@ public class cli{
             }
         }
         for (int i2 = 0; i2 < userBooks.length; i2++) {
-            if (userBooks[i2] == null) {
+            if (userBooks[i2] == null) {//gives book to user and removes it from store
                 userBooks[i2] = new Book(selBook.getTitle(), selBook.getAuthor(), selBook.getYearPublished(), selBook.getIsbn(), 1);
                 bks.removeBook(selBook);
                 break;
@@ -179,7 +179,7 @@ public class cli{
         }
         System.out.print("Enter user number: ");
         uc = 0;
-        int selU = sc.nextInt();
+        int selU = sc.nextInt();//selects user
         User user = new User(null, null);
         for (User u : users) {
             if (u != null) {
@@ -208,7 +208,7 @@ public class cli{
         }
         System.out.print("Enter book number: ");
         i = 0;
-        int sel = sc.nextInt();
+        int sel = sc.nextInt();//selects book
         for (int i2 = 0; i2 < userBooks.length; i2++) {
             if (userBooks[i2] != null) {
                 if (i == sel) {
@@ -217,13 +217,13 @@ public class cli{
                     for (int i3 = 0; i3 < bksB.length; i3++) {
                         if (userBooks[i2].getIsbn().equals(bksB[i3].getIsbn()) && userBooks[i2].getTitle().equals(bksB[i3].getTitle()) && userBooks[i2].getAuthor().equals(bksB[i3].getAuthor()) && userBooks[i2].getYearPublished() == bksB[i3].getYearPublished()) {
                             t = false;
-                            bksB[i3].setQuantity(bksB[i3].getQuantity() + 1);
+                            bksB[i3].setQuantity(bksB[i3].getQuantity() + 1);//if copy is already in store adds to quantity
                         }
                     }
-                    if (t) {
+                    if (t) {//otherwise adds it to store
                         bks.addBook(userBooks[i2]);
                     }
-                    userBooks[i2] = null;
+                    userBooks[i2] = null;//and removes book from user
                     break;
                 }
                 i++;
@@ -234,7 +234,7 @@ public class cli{
             cont();
         }
     }
-    public void cont() {
+    public void cont() {//stalls cmd so user can read output
         System.out.println("Press enter to continue");
         sc.nextLine();
         sc.nextLine();
